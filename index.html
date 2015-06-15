@@ -35,7 +35,7 @@
       }
 
       function getLocation() {
-        alert("getLocation");
+      //  alert("getLocation");
         if(pgr == true) {
           var locOptions = {
             timeout : 5000,
@@ -52,7 +52,7 @@
       }
 
       function onLocationSuccess(loc) {
-        alert("onLocationSuccess");
+     //   alert("onLocationSuccess");
         //We received something from the API, so first get the
         // timestamp in a date object so we can work with it
         var d = new Date(loc.timestamp);
@@ -95,7 +95,7 @@
 <div data-role="main" class="ui-content">
   <h2>My Phonebook</h2>
   <ul data-role="listview" data-autodividers="true" data-inset="true" data-filter="true">
-    <li>Piku<h2 id="pik_lat"></h2><h2 id="pik_longi"></h2></li>
+    <li>Piku<p>Latitude</p><h2 id="pik_lat"></h2><p>Longitude</p><h2 id="pik_longi"></h2></li>
       <li>Piyu<h2 id="piy_lat"></h2><h2 id="piy_longi"></h2></li>
     <li>Mom<h2 id="mom_lat"></h2><h2 id="mom_longi"></h2></li>
     <li>Dad<h2 id="dad_lat"></h2><h2 id="dad_longi"></h2></li>
