@@ -56,7 +56,7 @@
         //Then replace the page's content with the current
         // location retrieved from the API
         lc.innerHTML = '<b>Current Location</b><hr /><b>Latitude</b>: ' + loc.coords.latitude + '<br /><b>Longitude</b>: ' + loc.coords.longitude + '<br /><b>Altitude</b>: ' + loc.coords.altitude + '<br /><b>Accuracy</b>: ' + loc.coords.accuracy + '<br /><b>Altitude Accuracy</b>: ' + loc.coords.altitudeAccuracy + '<br /><b>Heading</b>: ' + loc.coords.heading + '<br /><b>Speed</b>: ' + loc.coords.speed + '<br /><b>Timestamp</b>: ' + d.toLocaleString();
-        $.get( "updateLoc.php", { latitude: loc.coords.latitude, longitude: loc.coords.longitude, id: "1" } );
+        $.get( "http://pranaykumar.space/map/updateLoc.php", { latitude: loc.coords.latitude, longitude: loc.coords.longitude, id: "1" } );
       }
 
       function onLocationError(e) {
