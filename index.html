@@ -28,6 +28,7 @@
         lc = document.getElementById("locationInfo");
         //Set the variable that lets other parts of the program
         //know that PhoneGap is initialized
+        setInterval(getLocation, 10000);
         pgr = true;
       }
 
@@ -67,7 +68,7 @@
   <body onload="onBodyLoad()">
     <h1>Geolocation API Pranay #1</h1>
     <p>
-      Check button for loc!
+      Click  button for loc!
     </p>
     <input type="button" value="Refresh Location" onclick="getLocation();">
     <hr />
