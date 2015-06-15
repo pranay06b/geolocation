@@ -4,16 +4,20 @@ xmlns:gap = "http://phonegap.com/ns/1.0"
 id = "com.phonegapessentials.ex191"
 version = "1.0.0">
 
-  <name>Example 19-1</name>
-  <description>An example application that uses the PhoneGap Geolocation API</description>
+  <name>Family Tracker</name>
+  <description>Family Tracker</description>
   <author href="http://johnwargo.com"
-  email="john@johnwargo.com">John M. Wargo</author>
+  email="pranay06b@gmail.com">Pranay Kumar</author>
   <gap:platforms>
     <gap:platform name="android" minVersion="2.1" />
     <gap:platform name="webos" />
     <gap:platform name="symbian.wrt" />
     <gap:platform name="blackberry" project="widgets"/>
   </gap:platforms>
+  <platform name="android">
+              <icon src="fam.png" density="ldpi" />
+              
+     </platform>
   <!-- If you do not want any permissions to be added to your app,
   add the following tag to your config.xml instead; you will still
   have the INTERNET permission on your app, which PhoneGap requires: -->
