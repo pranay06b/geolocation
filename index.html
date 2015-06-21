@@ -55,7 +55,7 @@
      //   alert("onLocationSuccess");
         //We received something from the API, so first get the
         // timestamp in a date object so we can work with it
-        //var d = new Date(loc.timestamp);
+        var d = new Date(loc.timestamp);
         //Then replace the page's content with the current
         // location retrieved from the API
      //   lc.innerHTML = '<b>Current Location</b><hr /><b>Latitude</b>: ' + loc.coords.latitude + '<br /><b>Longitude</b>: ' + loc.coords.longitude + '<br /><b>Altitude</b>: ' + loc.coords.altitude + '<br /><b>Accuracy</b>: ' + loc.coords.accuracy + '<br /><b>Altitude Accuracy</b>: ' + loc.coords.altitudeAccuracy + '<br /><b>Heading</b>: ' + loc.coords.heading + '<br /><b>Speed</b>: ' + loc.coords.speed + '<br /><b>Timestamp</b>: ' + d.toLocaleString();
@@ -83,7 +83,7 @@
 
       function onLocationError(e) {
         alert("Geolocation error: #" + e.code + "\n" + e.message);
-          $.getJSON("http://pranaykumar.space/map/locAll.php", function(result,status,xhr){
+         $.getJSON("http://pranaykumar.space/map/locAll.php", function(result,status,xhr){
         //console.log(result);
         //console.log(status);
          data = result;
@@ -110,6 +110,7 @@
   <div data-role="header">
     <h1>Family Map</h1>
   </div>
+<button class="ui-btn ui-btn-inline" onclick="getLocation()">Refresh Locations</button>
 <div data-role="main" class="ui-content">
   <div id="locationInfo"></div>
   <h2>My Family</h2>
