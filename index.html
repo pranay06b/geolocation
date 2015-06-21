@@ -30,9 +30,7 @@
         lc = document.getElementById("locationInfo");
         //Set the variable that lets other parts of the program
         //know that PhoneGap is initialized
-        display();
-        setInterval(getLocation, 10000);
-        setInterval(display, 10000);
+        setInterval(getLocation, 100000);
         pgr = true;
       }
 
@@ -62,24 +60,13 @@
         // location retrieved from the API
      //   lc.innerHTML = '<b>Current Location</b><hr /><b>Latitude</b>: ' + loc.coords.latitude + '<br /><b>Longitude</b>: ' + loc.coords.longitude + '<br /><b>Altitude</b>: ' + loc.coords.altitude + '<br /><b>Accuracy</b>: ' + loc.coords.accuracy + '<br /><b>Altitude Accuracy</b>: ' + loc.coords.altitudeAccuracy + '<br /><b>Heading</b>: ' + loc.coords.heading + '<br /><b>Speed</b>: ' + loc.coords.speed + '<br /><b>Timestamp</b>: ' + d.toLocaleString();
         $.get( "http://pranaykumar.space/map/updateLoc.php", { latitude: loc.coords.latitude, longitude: loc.coords.longitude, id: "4" } );
-        
-      }
-
-      function onLocationError(e) {
-        alert("Geolocation error: #" + e.code + "\n" + e.message);
-      }
-      funtion display()
-      {
             $.getJSON("http://pranaykumar.space/map/locAll.php", function(result,status,xhr){
         //console.log(result);
         //console.log(status);
          data = result;
          $("#pik_lat").text(data[1]["latitude"]);
          $("#pik_longi").text(data[1]["longitude"]);
-          var pikloc ="https://www.google.co.in/maps/@"+data[1]["latitude"]+","+data[1]["longitude"]+",18z";
-          var x = '<a href="'+pikloc+'" class="ui-btn ui-btn-inline" target="_blank">Open Location</a>';
-          $("#pik_longi").append(x);
-          
+
          $("#piy_lat").text(data[2]["latitude"]);
          $("#piy_longi").text(data[2]["longitude"]);
 
@@ -93,6 +80,10 @@
          $("#sum_longi").text(data[5]["longitude"]);
     });
       }
+
+      function onLocationError(e) {
+        alert("Geolocation error: #" + e.code + "\n" + e.message);
+      }
     </script>
   </head>
   <body onload="onBodyLoad()">
@@ -100,9 +91,9 @@
   <div data-role="header">
     <h1>Family Map</h1>
   </div>
-<button class="ui-btn ui-btn-inline" onclick="getLocation()">Refresh All Locations</button>
-
+<button class="ui-btn ui-btn-inline" onclick="getLocation()">Refresh Locations</button>
 <div data-role="main" class="ui-content">
+  <div id="locationInfo"></div>
   <h2>My Family</h2>
   <ul data-role="listview" data-autodividers="true" data-inset="true" data-filter="true">
     <li>Piku<p>Latitude</p><h2 id="pik_lat"></h2><p>Longitude</p><h2 id="pik_longi"></h2></li>
